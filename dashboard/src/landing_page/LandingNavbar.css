@@ -1,0 +1,45 @@
+.landing-nav {
+  height: 64px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+.landing-nav-inner {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.landing-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #387ed1;
+  text-decoration: none;
+}
+
+.landing-brand img {
+  height: 24px;
+}
+
+.landing-links {
+  display: flex;
+  gap: 24px;
+}
+
+.landing-links a {
+  text-decoration: none;
+  color: #2b2f36;
+  font-weight: 500;
+}
+
+.landing-links a.active {
+  color: #387ed1;
+  font-weight: 700;
+}

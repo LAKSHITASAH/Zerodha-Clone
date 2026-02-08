@@ -1,0 +1,648 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; color: #444; background: #fff; }
+
+.kite-shell { min-height: 100vh; }
+
+/* ===================== TOPBAR ===================== */
+.kite-topbar{
+  height: 60px;
+  border-bottom: 1px solid #eee;
+  display: grid;
+  grid-template-columns: 360px 1fr 520px;
+  align-items: center;
+  background: #fff;
+}
+
+.kite-topbar-left{ padding: 0 14px; }
+.kite-indices{ display: flex; gap: 18px; align-items: center; }
+.idx{ display: flex; gap: 10px; align-items: center; font-size: 12px; color: #777; }
+.idx-val{ font-weight: 700; }
+
+.kite-topbar-center{ display:flex; justify-content:center; }
+.kite-logo{ width: 34px; height: 34px; display:flex; align-items:center; justify-content:center; }
+.kite-logo-mark{
+  width: 22px; height: 22px;
+  background: #ff5722;
+  clip-path: polygon(0 50%, 60% 0, 100% 0, 40% 50%, 100% 100%, 60% 100%);
+}
+
+.kite-topbar-right{
+  display:flex; justify-content:flex-end; align-items:center;
+  padding: 0 14px; gap: 14px;
+}
+.kite-nav{ display:flex; gap: 18px; font-size: 13px; }
+.navitem{ text-decoration:none; color:#666; padding: 6px 0; }
+.navitem.active{ color:#ff5722; border-bottom: 2px solid #ff5722; }
+
+.kite-user{ display:flex; gap: 8px; align-items:center; font-size: 12px; color:#666; }
+.kite-avatar{
+  width: 28px; height: 28px; border-radius: 50%;
+  display:flex; align-items:center; justify-content:center;
+  background:#f3f3f3; border:1px solid #eee; font-weight:700;
+}
+
+/* ===================== BODY SPLIT ===================== */
+.kite-body{
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  min-height: calc(100vh - 60px);
+}
+
+.kite-left{
+  border-right: 1px solid #eee;
+  background: #fff;
+}
+
+.kite-content{
+  background:#fff;
+}
+
+/* ===================== WATCHLIST ===================== */
+.wl-search{
+  height: 48px;
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  border-bottom: 1px solid #eee;
+  padding: 0 12px;
+}
+
+.wl-search input{
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  color: #444;
+}
+
+.wl-count{ font-size: 12px; color: #999; }
+
+.wl-list{ padding: 0; }
+
+.wl-row{
+  position: relative;
+  height: 54px;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 0 14px;
+  border-bottom: 1px solid #f2f2f2;
+  cursor: pointer;
+}
+
+.wl-row:hover{ background:#fafafa; }
+.wl-row.active{ background:#fbfbfb; }
+
+.wl-symbol{ font-size: 12px; color:#777; }
+
+.wl-right{
+  display:flex;
+  gap: 12px;
+  align-items:center;
+  font-size: 12px;
+}
+
+.wl-chg{ width: 60px; text-align:right; }
+.wl-ltp{ width: 64px; text-align:right; color:#555; }
+
+/* actions hidden normally */
+.wl-actions{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  gap: 8px;
+  align-items: center;
+  background: #fff;
+  padding-left: 10px;
+}
+
+/* show actions only on hover */
+.wl-row:hover .wl-actions{ display:flex; }
+
+/* hide price change when hover */
+.wl-row:hover .wl-right{ visibility: hidden; }
+
+/* Buy/Sell buttons */
+.wl-btn{
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 11px;
+  color: #fff;
+  line-height: 26px;
+}
+
+.wl-buy{ background: #4184f3; }
+.wl-sell{ background: #ff5722; }
+
+/* icon buttons */
+.wl-icon{
+  height: 26px;
+  width: 28px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  color: #666;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.wl-icon:hover{ background:#f7f7f7; }
+
+/* ===================== PAGES ===================== */
+.page{ padding: 22px 26px; }
+.page-title{ font-size: 22px; color:#666; margin-bottom: 18px; }
+.hr{ border-top: 1px solid #eee; margin: 18px 0; }
+.pad{ padding: 8px 0; }
+.muted{ color:#9a9a9a; font-size: 12px; }
+.error{ color: #d32f2f; font-size: 12px; }
+
+/* ===================== DASHBOARD ===================== */
+.section-title{
+  font-size: 13px;
+  color:#666;
+  margin-bottom: 12px;
+}
+.section{ margin-bottom: 16px; }
+
+.equity-box{
+  display:grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 18px;
+  align-items:center;
+  padding: 18px 0;
+}
+.equity-mid{ height: 70px; background:#eee; }
+.equity-big{ font-size: 34px; color:#666; }
+
+.eq-row{
+  display:flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 3px 0;
+  color:#666;
+}
+
+/* Positions table column alignment */
+.positions-cols {
+  grid-template-columns: 0.7fr 1.2fr 0.6fr 0.8fr 0.8fr 0.8fr 0.7fr;
+}
+/* ===== Funds (Zerodha-like) ===== */
+.funds-top{
+  display:flex;
+  justify-content:flex-end;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.funds-btn{
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.funds-btn-primary{
+  border: 1px solid #4184f3;
+  background:#4184f3;
+  color:#fff;
+}
+
+.funds-btn-outline{
+  border: 1px solid #4184f3;
+  background:#fff;
+  color:#4184f3;
+}
+
+.funds-card{
+  width: 360px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 14px;
+  background:#fff;
+}
+
+.funds-row{
+  display:flex;
+  justify-content:space-between;
+  padding: 6px 0;
+  font-size: 12px;
+  color:#666;
+}
+
+.funds-hr{
+  border-top: 1px solid #eee;
+  margin: 10px 0;
+}
+
+.funds-commodity{
+  margin-top: 26px;
+}
+
+/* sir style holdings summary */
+.kite-holdings-summary{
+  display: grid;
+  grid-template-columns: 240px 1px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 18px 0;
+}
+.hs-left{ display:flex; flex-direction: column; gap: 6px; }
+.hs-big{ font-size: 34px; font-weight: 500; color:#666; }
+.hs-small{ font-size: 12px; }
+.hs-mid{ height: 70px; background:#eee; }
+.hs-right{ display:flex; flex-direction: column; gap: 8px; font-size: 12px; color:#666; }
+.hs-row{ display:flex; justify-content: space-between; }
+
+.kite-note{ font-size: 13px; padding: 10px 0; color:#888; }
+.kite-error-text{ color:#d32f2f; }
+
+/* ===================== HOLDINGS TABLE ===================== */
+.table-wrap{ margin-top: 10px; }
+.kite-table{ border-top: 1px solid #eee; }
+
+.tr{
+  display:grid;
+  grid-template-columns: 1.2fr 0.6fr 0.8fr 0.7fr 0.9fr 0.7fr 0.7fr 0.7fr;
+  padding: 10px 8px;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 12px;
+  color:#666;
+  align-items:center;
+}
+.tr.th{
+  color:#9a9a9a;
+  font-size: 11px;
+  background:#fff;
+}
+.sym{ color:#555; }
+
+.pos{ color:#2e7d32; }
+.neg{ color:#d32f2f; }
+
+/* ===================== ORDERS PAGE ===================== */
+.kite-page{ padding: 22px 26px; }
+
+.kite-page-title-lg{
+  font-size: 28px;
+  font-weight: 500;
+  color: #555;
+  margin: 6px 0 18px;
+}
+
+.kite-empty{
+  height: calc(100vh - 160px);
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 18px;
+  gap: 16px;
+}
+
+.kite-empty-text{
+  color:#9aa0a6;
+  font-size: 13px;
+}
+
+.kite-btn-outline{
+  width: fit-content;
+  border: 1px solid #e5e7eb;
+  background:#fff;
+  color:#666;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.kite-btn-outline:hover{ background:#fafafa; }
+
+/* orders table */
+.kite-order-table{ border-top: 1px solid #f0f0f0; }
+
+.kite-order-row{
+  display: grid;
+  grid-template-columns: 110px 1.2fr 110px 90px 110px 110px;
+  gap: 10px;
+  padding: 10px 6px;
+  border-bottom: 1px solid #f2f2f2;
+  align-items: center;
+  font-size: 12px;
+  color: #666;
+}
+
+.kite-order-head{ color:#9aa0a6; font-size:11px; }
+.kite-strong{ color:#555; font-weight:500; }
+.kite-num{ text-align:right; font-variant-numeric: tabular-nums; }
+.kite-muted{ color:#9aa0a6; } 
+
+/* ===== Apps page (Zerodha-like) ===== */
+.apps-top{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 10px 0 18px;
+}
+
+.apps-tabs{
+  display:flex;
+  gap: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.apps-tab{
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.apps-tab.active{
+  color:#ff5722;
+  border-bottom: 2px solid #ff5722;
+  margin-bottom: -1px;
+}
+
+.apps-search{
+  width: 260px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 8px 10px;
+}
+
+.apps-search input{
+  width:100%;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color:#444;
+}
+
+.apps-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.app-card{
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 14px;
+  background: #fff;
+}
+
+.app-head{
+  display:flex;
+  gap: 12px;
+  align-items:center;
+}
+
+.app-logo{
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  border: 1px solid #eee;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 700;
+  color:#666;
+  font-size: 13px;
+}
+
+.app-name{
+  font-size: 14px;
+  color:#444;
+  font-weight: 600;
+}
+
+.app-by{
+  font-size: 12px;
+  color:#9aa0a6;
+  margin-top: 2px;
+}
+
+.app-desc{
+  font-size: 12px;
+  color:#666;
+  margin: 12px 0;
+  line-height: 1.45;
+  min-height: 34px;
+}
+
+.app-tags{
+  display:flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.app-tag{
+  font-size: 11px;
+  color:#666;
+  border: 1px solid #eee;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #fafafa;
+}
+
+.app-actions{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  gap: 10px;
+}
+
+.app-primary{
+  border: 1px solid transparent;
+  background: #4184f3;
+  color: #fff;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.app-primary.open{
+  background: #ff5722;
+}
+
+.apps-empty{
+  padding-top: 10px;
+  display:flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+
+
+/* ===================== ZERODHA BUY/SELL WINDOW ===================== */
+.kite-modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.kite-modal{
+  width: 620px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.kite-modal-header{
+  padding: 12px 14px;
+  color: #fff;
+}
+.kite-modal-header.buy{ background:#4184f3; }
+.kite-modal-header.sell{ background:#ff5722; }
+
+.kite-modal-title{
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.kite-modal-sub{
+  margin-top: 6px;
+  display: flex;
+  gap: 14px;
+  font-size: 12px;
+  opacity: 0.95;
+}
+.kite-modal-sub label{
+  display:flex;
+  gap: 6px;
+  align-items:center;
+}
+
+.kite-modal-tabs{
+  display:flex;
+  gap: 18px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+.kite-tab{
+  border:none;
+  background: transparent;
+  color:#7a7a7a;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 0;
+}
+.kite-tab.active{
+  color:#4184f3;
+  font-weight: 600;
+}
+
+.kite-modal-body{
+  padding: 14px;
+  display:flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.kite-row-2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 18px;
+}
+.kite-gap-lg{ gap: 28px; }
+
+.kite-radio{
+  font-size: 12px;
+  color:#666;
+  display:flex;
+  align-items:center;
+  gap: 8px;
+}
+.kite-radio.small{ font-size: 12px; gap: 6px; }
+
+.kite-field .kite-label{
+  font-size: 11px;
+  color:#9aa0a6;
+  margin-bottom: 6px;
+}
+
+.kite-input{
+  width: 140px;
+  height: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 3px;
+  padding: 0 10px;
+  font-size: 12px;
+  outline: none;
+}
+
+.kite-inline{
+  margin-top: 8px;
+  display:flex;
+  gap: 14px;
+  align-items:center;
+}
+.kite-inline.right{ justify-content: flex-end; }
+
+.kite-more{
+  margin-top: 8px;
+  font-size: 12px;
+  color:#4184f3;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.kite-modal-footer{
+  margin-top: 6px;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+  padding: 12px 14px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kite-muted-sm{
+  font-size: 12px;
+  color:#666;
+}
+
+.kite-footer-actions{
+  display:flex;
+  gap: 10px;
+}
+
+.kite-btn{
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 12px;
+  color:#fff;
+}
+.kite-btn.buy{ background:#4184f3; }
+.kite-btn.sell{ background:#ff5722; }
+
+.kite-btn.ghost{
+  background:#fff;
+  border-color:#ddd;
+  color:#666;
+}
+.kite-btn.ghost:hover{ background:#f6f6f6; }

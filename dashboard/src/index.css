@@ -1,0 +1,836 @@
+/* ========== GLOBAL RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f5f5f5;
+  color: #444;
+}
+
+/* Root wrapper */
+.app-root {
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+/* ===== Zerodha landing/signup page ===== */
+.z-landing {
+  min-height: 100vh;
+  background: #fff;
+  color: #444;
+}
+
+.z-nav {
+  height: 76px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 70px;
+  background: #fff;
+}
+
+.z-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.z-logo-mark {
+  width: 26px;
+  height: 26px;
+  background: #1a73e8;
+  clip-path: polygon(0 0, 65% 0, 65% 30%, 30% 30%, 30% 100%, 0 100%);
+}
+
+.z-logo-text {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #1a73e8;
+}
+
+.z-logo-mark.small {
+  width: 18px;
+  height: 18px;
+}
+
+.z-logo-text.small {
+  font-size: 18px;
+}
+
+.z-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.z-nav-link {
+  font-size: 16px;
+  color: #666;
+  cursor: default;
+}
+
+.z-active {
+  color: #1a73e8;
+}
+
+.z-hamburger {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #333;
+  background: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.z-hero {
+  padding: 34px 70px 10px;
+  text-align: center;
+}
+
+.z-hero-image {
+  width: 82%;
+  max-width: 1100px;
+  height: 300px;
+  margin: 0 auto 40px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0));
+}
+
+.z-title {
+  font-size: 64px;
+  font-weight: 600;
+  color: #333;
+  margin: 10px 0 12px;
+}
+
+.z-subtitle {
+  font-size: 20px;
+  color: #666;
+  max-width: 920px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.z-cta {
+  margin-top: 26px;
+  background: #387ed1;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.z-footer {
+  margin-top: 40px;
+  border-top: 1px solid #eee;
+  padding: 46px 70px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.z-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.z-foot-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 14px;
+}
+
+.z-foot-link {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.z-foot-muted {
+  font-size: 14px;
+  color: #777;
+  margin-top: 4px;
+}
+
+.z-social {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.z-ic {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #666;
+}
+
+
+/* ========== TOP BAR ========== */
+.topbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+}
+
+/* Indices row */
+.topbar-indices {
+  display: flex;
+  gap: 32px;
+  padding: 6px 32px;
+  font-size: 12px;
+}
+
+.index-item {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.index-name {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #777;
+  font-size: 11px;
+}
+
+.index-value {
+  font-weight: 500;
+}
+
+.index-value.red {
+  color: #e15b5b;
+}
+
+/* Main row */
+.topbar-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
+  border-top: 1px solid #f1f1f1;
+}
+
+.topbar-left {
+  width: 80px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kite-img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+/* Nav + user */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.top-nav {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: #777;
+}
+
+.top-nav a.active {
+  color: #f26b3a;
+}
+
+.topbar-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #fbe6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.user-id {
+  font-size: 12px;
+  color: #777;
+}
+
+/* ========== MAIN LAYOUT ========== */
+.dashboard-layout {
+  display: flex;
+  height: calc(100vh - 90px);
+}
+
+/* LEFT PANEL (watchlist + search) */
+.left-panel {
+  width: 30%;
+  background-color: #ffffff;
+  border-right: 1px solid #eeeeee;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 12px;
+  color: #999;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 12px;
+  flex: 1;
+}
+
+.search-count {
+  margin-left: 8px;
+}
+
+/* RIGHT PANEL (dashboard / holdings / positions) */
+.main-panel {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 24px 40px;
+  overflow-y: auto;
+}
+
+/* ================= DASHBOARD STYLES ================= */
+/* Welcome */
+.dash-welcome {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+/* Divider */
+.dash-divider {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 20px 0;
+}
+
+/* Section header (square + title like Equity, Holdings) */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.section-toggle-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border: 1px solid #9e9e9e;
+  position: relative;
+}
+
+.section-toggle-icon::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  top: 50%;
+  height: 1px;
+  background-color: #9e9e9e;
+  transform: translateY(-50%);
+}
+
+.section-title-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* ==== Equity block ==== */
+.equity-grid {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.equity-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.equity-main {
+  font-size: 32px;
+  color: #333;
+  font-weight: 500;
+}
+
+.equity-label {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #999;
+}
+
+.equity-separator {
+  width: 1px;
+  height: 55px;
+  background: #dcdcdc;
+}
+
+.equity-right {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.equity-info {
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+  font-size: 12px;
+  color: #777;
+}
+
+.equity-info .value {
+  font-weight: 500;
+  color: #444;
+}
+
+/* ==== Holdings summary block ==== */
+.holdings-summary-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.hs-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.hs-main {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.hs-change {
+  margin-top: 3px;
+  font-size: 12px;
+}
+
+.hs-green {
+  color: #4caf50;
+}
+
+.hs-right {
+  text-align: right;
+}
+
+.hs-info {
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.hs-info .value {
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+/* ========= HOLDINGS TABLE ========= */
+.holdings-card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.holdings-table-wrapper {
+  border: 1px solid #eeeeee;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.holdings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.holdings-table thead {
+  background-color: #fafafa;
+}
+
+.holdings-table th,
+.holdings-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #f2f2f2;
+  border-right: 1px solid #f5f5f5;
+}
+
+.holdings-table th:last-child,
+.holdings-table td:last-child {
+  border-right: none;
+}
+
+.holdings-table th {
+  font-weight: 500;
+  color: #999;
+  text-align: right;
+}
+
+.holdings-table th:first-child,
+.holdings-table td:first-child {
+  text-align: left;
+}
+
+.instrument-cell {
+  min-width: 170px;
+}
+
+.instrument-name {
+  font-size: 12px;
+}
+
+.instrument-symbol {
+  font-size: 11px;
+  color: #b3b3b3;
+}
+
+.num-cell {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.text-green {
+  color: #4caf50;
+  font-weight: 500;
+}
+
+.text-red {
+  color: #e15b5b;
+  font-weight: 500;
+}
+
+.holdings-totals {
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+  padding: 10px 12px;
+  font-size: 12px;
+}
+
+.totals-label {
+  color: #999;
+}
+
+.totals-value {
+  font-size: 13px;
+}
+
+.totals-pnl .totals-value {
+  font-weight: 600;
+}
+
+/* ========= POSITIONS TABLE ========= */
+.positions-card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.positions-table-wrapper {
+  border: 1px solid #eeeeee;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.positions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.positions-table thead {
+  background-color: #fafafa;
+}
+
+.positions-table th,
+.positions-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #f2f2f2;
+  border-right: 1px solid #f5f5f5;
+}
+
+.positions-table th:last-child,
+.positions-table td:last-child {
+  border-right: none;
+}
+
+.positions-table th {
+  font-weight: 500;
+  color: #999;
+  text-align: right;
+}
+
+.positions-table th:first-child,
+.positions-table td:first-child {
+  text-align: left;
+}
+
+/* reuse same helpers */
+.instrument-cell {
+  min-width: 150px;
+}
+
+.instrument-name {
+  font-size: 12px;
+}
+/* ===== ORDER MODAL ===== */
+
+.order-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.order-modal {
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 24px;
+  min-width: 320px;
+  max-width: 380px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.order-modal h3 {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* form rows */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-row label {
+  font-size: 13px;
+  color: #555;
+  margin-right: 10px;
+}
+
+.order-row input,
+.order-row select {
+  flex: 1;
+  font-size: 13px;
+  padding: 4px 6px;
+  border: 1px solid #d0d0d0;
+  border-radius: 2px;
+}
+
+/* buttons */
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.order-btn {
+  border: none;
+  border-radius: 2px;
+  font-size: 13px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.order-btn.secondary {
+  background-color: #f5f5f5;
+  color: #555;
+}
+
+.order-btn.primary.buy {
+  background-color: #1e88e5;
+  color: #ffffff;
+}
+
+.order-btn.primary.sell {
+  background-color: #fb8c00;
+  color: #ffffff;
+}
+
+
+/* click-select behaviour */
+
+.watchlist-row {
+  cursor: pointer;
+}
+
+.wl-row-selected {
+  background-color: #fff7f5; /* subtle highlight */
+}
+
+.wl-selected-text {
+  color: #e85c4a;
+  font-weight: 500;
+}
+
+
+/* ========= WATCHLIST (LEFT SIDE) ========= */
+
+.watchlist {
+  font-size: 12px;
+  background-color: #ffffff;
+  border-top: 1px solid #f1f1f1;
+}
+
+/* header row with INFY + B/S + icons */
+.watchlist-header-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.wl-selected-symbol {
+  color: #e85c4a;
+  font-weight: 500;
+  font-size: 12px;
+  margin-right: auto;
+}
+
+.wl-drag-handle {
+  border: none;
+  background: transparent;
+  cursor: move;
+  font-size: 14px;
+  color: #999;
+}
+
+.wl-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* B / S buttons */
+.wl-mode-btn {
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  padding: 3px 9px;
+  font-size: 11px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.wl-mode-btn.wl-buy.active {
+  background-color: #1e88e5;
+  border-color: #1e88e5;
+  color: #ffffff;
+}
+
+.wl-mode-btn.wl-sell {
+  background-color: #fb8c00;
+  border-color: #fb8c00;
+  color: #ffffff;
+}
+
+/* Icon buttons */
+.wl-icon-btn {
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  padding: 3px 6px;
+  font-size: 11px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+/* rows */
+.watchlist-rows {
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+}
+
+.watchlist-row {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.watchlist-row:hover {
+  background-color: #fafafa;
+}
+
+.wl-row-symbol {
+  flex: 1;
+}
+
+.wl-row-change {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.wl-row-arrow {
+  margin-left: 3px;
+  font-size: 10px;
+}
+
+.wl-row-ltp {
+  width: 60px;
+  text-align: right;
+}
+
+/* colors like Kite */
+.wl-green {
+  color: #4caf50;
+}
+
+.wl-red {
+  color: #e15b5b;
+}

@@ -1,0 +1,70 @@
+.team-section {
+  padding: 80px 120px;
+  background: white;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.team-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  color: #333;
+}
+
+.team-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.team-image-wrapper {
+  text-align: center;
+}
+
+.team-image {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.team-name {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.team-role {
+  margin-top: 4px;
+  color: #666;
+}
+
+.team-info {
+  flex: 1;
+  font-size: 17px;
+  color: #444;
+  line-height: 1.7;
+}
+
+.team-info a {
+  color: #1e88e5;
+  text-decoration: none;
+}
+
+.team-info a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .team-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-image {
+    width: 260px;
+    height: 260px;
+  }
+}

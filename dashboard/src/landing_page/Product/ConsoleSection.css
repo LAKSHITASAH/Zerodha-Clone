@@ -1,0 +1,87 @@
+.console-section {
+  max-width: 1100px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+/* Left side text */
+.console-text {
+  flex: 1;
+}
+
+.console-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2e2e2e;
+  margin-bottom: 1rem;
+}
+
+.console-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 380px;
+  margin-bottom: 1.5rem;
+}
+
+.console-link {
+  color: #387ed1;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.console-link:hover {
+  text-decoration: underline;
+}
+
+/* Right side image */
+.console-visual {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+}
+
+.console-image-wrapper {
+  position: relative;
+}
+
+/* dotted background idea – optional */
+.console-image-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -30px -40px;
+  border-radius: 999px;
+  border: 2px dotted #e0e7ff;
+  z-index: 0;
+}
+
+.console-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .console-section {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .console-text,
+  .console-visual {
+    width: 100%;
+  }
+
+  .console-description {
+    max-width: 100%;
+  }
+}

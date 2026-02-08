@@ -1,0 +1,88 @@
+.coin-section {
+  max-width: 1200px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+/* Left side image */
+.coin-visual {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+}
+
+.coin-image-wrapper {
+  position: relative;
+}
+
+.coin-image {
+  width: 100%;
+  max-width: 520px;
+  position: relative;
+  z-index: 2;
+  border-radius: 12px;
+}
+
+/* Right side text */
+.coin-text {
+  flex: 1;
+}
+
+.coin-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2e2e2e;
+  margin-bottom: 1rem;
+}
+
+.coin-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 380px;
+  margin-bottom: 1.5rem;
+}
+
+.coin-link {
+  color: #387ed1;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.coin-link:hover {
+  text-decoration: underline;
+}
+
+/* App Store + Play Store badges */
+.coin-app-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.store-badge {
+  height: 45px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .coin-section {
+    flex-direction: column-reverse;
+    text-align: left;
+  }
+
+  .coin-visual,
+  .coin-text {
+    width: 100%;
+  }
+
+  .coin-description {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,114 @@
+.pricing-section {
+  padding: 80px 80px;
+  background-color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+}
+
+/* Center content and reduce space between text and cards */
+.pricing-container {
+  max-width: 1150px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px; /* was 80px – closer now */
+}
+
+/* LEFT */
+
+.pricing-left {
+  flex: 1;
+}
+
+.pricing-heading {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+}
+
+.pricing-text {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  max-width: 420px;
+  margin-bottom: 14px;
+}
+
+.pricing-link {
+  font-size: 15px;
+  color: #1e88e5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.pricing-link:hover {
+  text-decoration: underline;
+}
+
+/* RIGHT – CARDS, tighter + nicer */
+
+.pricing-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 430px;
+
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  background-color: #fff;
+}
+
+.price-card {
+  padding: 36px 28px;
+  text-align: center;
+  background-color: #ffffff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.price-card + .price-card {
+  border-left: 1px solid #e6e6e6;
+}
+
+.price-value {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.price-desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* subtle hover effect */
+.price-card:hover {
+  background-color: #fafafa;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .pricing-section {
+    padding: 60px 24px;
+  }
+
+  .pricing-container {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .pricing-right {
+    max-width: 100%;
+    width: 100%;
+  }
+}

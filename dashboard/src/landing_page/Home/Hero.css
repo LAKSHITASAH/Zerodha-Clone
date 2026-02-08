@@ -1,0 +1,41 @@
+.hero-section {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.hero-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img {
+  width: 80%;
+  max-width: 900px;
+}
+
+.hero-title {
+  font-size: 36px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #555;
+}
+
+.hero-btn {
+  margin-top: 25px;
+  font-size: 17px;
+  padding: 14px 30px;
+  background-color: #1e88e5;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-btn:hover {
+  background-color: #0f6fc9;
+}

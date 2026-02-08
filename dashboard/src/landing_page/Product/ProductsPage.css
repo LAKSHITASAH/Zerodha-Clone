@@ -1,0 +1,14 @@
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 40px;
+  gap: 40px;
+}
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 40px;
+}

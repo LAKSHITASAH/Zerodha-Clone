@@ -1,0 +1,75 @@
+.education-section {
+  padding: 90px 100px;
+  background-color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+}
+
+.education-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+/* LEFT SIDE */
+.education-left {
+  flex: 1;
+}
+
+.education-img {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* RIGHT SIDE */
+.education-right {
+  flex: 1.1;
+}
+
+.education-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #1a1a1a;
+}
+
+.education-desc,
+.education-desc2 {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 14px;
+  max-width: 480px;
+}
+
+.education-link {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e88e5;
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+
+.education-link:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .education-section {
+    padding: 60px 24px;
+  }
+
+  .education-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .education-desc,
+  .education-desc2 {
+    max-width: 100%;
+    text-align: center;
+  }
+}

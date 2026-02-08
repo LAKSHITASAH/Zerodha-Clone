@@ -1,0 +1,113 @@
+/* backdrop */
+.order-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* modal */
+.order-modal {
+  width: 380px;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  animation: popup 0.25s ease;
+}
+
+/* header */
+.order-modal .header {
+  background: #4184f3;
+  padding: 14px 16px;
+  color: #fff;
+}
+
+.order-modal .header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.order-modal .header span {
+  font-size: 0.7rem;
+  opacity: 0.9;
+}
+
+/* body */
+.order-modal .body {
+  padding: 16px;
+}
+
+/* input rows */
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.input-row label {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.input-row input {
+  width: 120px;
+  padding: 6px 8px;
+  font-size: 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* footer */
+.order-modal .footer {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+}
+
+/* buttons */
+.order-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.order-btn.primary {
+  background: #4184f3;
+  color: #fff;
+}
+
+.order-btn.secondary {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.order-btn.primary:hover {
+  background: #2f6fe4;
+}
+
+.order-btn.secondary:hover {
+  background: #e2e2e2;
+}
+
+/* animation */
+@keyframes popup {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

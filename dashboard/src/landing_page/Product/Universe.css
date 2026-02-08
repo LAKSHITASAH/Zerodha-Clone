@@ -1,0 +1,87 @@
+.universe {
+  max-width: 1100px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.universe-header {
+  margin-bottom: 3rem;
+}
+
+.universe-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2e2e2e;
+  margin-bottom: 0.5rem;
+}
+
+.universe-subtitle {
+  font-size: 16px;
+  color: #666;
+}
+
+/* GRID */
+.universe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem 3rem;
+  margin-top: 3rem;
+}
+
+.universe-item {
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.universe-logo {
+  height: 45px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.universe-item-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.universe-item-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* CTA BUTTON */
+.universe-cta {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.universe-button {
+  background: #387ed1;
+  color: white;
+  font-size: 16px;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.universe-button:hover {
+  filter: brightness(0.95);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .universe-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .universe-grid {
+    grid-template-columns: 1fr;
+  }
+}
