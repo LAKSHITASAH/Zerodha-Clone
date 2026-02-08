@@ -12,11 +12,30 @@ const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
+// =========================
 // MIDDLEWARE
-app.use(cors());
+// =========================
+
+// CORS: Allow your deployed frontends to call this backend
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "http://localhost:5174",
+      // After deploying, add your Vercel URLs here:
+      // "https://your-frontend.vercel.app",
+      // "https://your-dashboard.vercel.app",
+    ],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
+// =========================
 // ROUTES
+// =========================
 app.use("/auth", authRoutes);
 
 // TEST ROUTE
@@ -95,9 +114,15 @@ app.post("/newOrder", async (req, res) => {
   }
 });
 
+// =========================
 // START SERVER + CONNECT DB
-const PORT = process.env.PORT || 3005;
+// =========================
+const PORT = process.env.PORT || 5000;
 const uri = process.env.MONGO_URL;
+
+if (!uri) {
+  console.error("❌ MONGO_URL is missing. Add it in your .env locally and in Render env vars.");
+}
 
 mongoose
   .connect(uri)
@@ -105,5 +130,5 @@ mongoose
   .catch((err) => console.error("❌ DB connection error:", err.message));
 
 app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
